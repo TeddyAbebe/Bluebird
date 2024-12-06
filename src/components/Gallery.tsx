@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { galleryImages } from "../utils/imageData";
+import { galleryImages as defaultGalleryImages } from "../utils/imageData";
 import { ArrowBigLeftDash, ArrowBigRightDash, X } from "lucide-react";
 import { GalleryImage } from "./image/GalleryImage";
 import { ImageLoader } from "./image/ImageLoader";
@@ -9,6 +9,23 @@ import { ImageLoader } from "./image/ImageLoader";
 export function Gallery() {
   const [isOpen, setIsOpen] = useState(false);
   const [currentImages, setCurrentImages] = useState<string[]>([]);
+  const [galleryImages, setGalleryImages] = useState(defaultGalleryImages);
+
+  // Get gallery images and save them to localStorage
+  useEffect(() => {
+    const storedImages = localStorage.getItem("galleryImages");
+
+    if (storedImages) {
+      // Use stored images if they exist
+      setGalleryImages(JSON.parse(storedImages));
+    } else {
+      // Save default images to localStorage
+      localStorage.setItem(
+        "galleryImages",
+        JSON.stringify(defaultGalleryImages)
+      );
+    }
+  }, []);
 
   const openModal = (images: string[]) => {
     setCurrentImages(images);
