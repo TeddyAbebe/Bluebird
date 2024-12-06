@@ -22,7 +22,7 @@ export const localImages = {
   about: "https://i.ibb.co/RCGCYG4/01-green.png",
   livingSpace: "https://i.ibb.co/wB3Nftx/06.jpg",
   dining: "https://i.ibb.co/s5HXdWY/12.jpg",
-  kitchen: "/src/images/FrontView/04.jpg",
+  kitchen: "https://i.ibb.co/rQcXSjd/09.jpg",
   bedroom: "/src/images/FrontView/04.jpg",
   bathroom: "/src/images/FrontView/04.jpg",
   commonArea: "/src/images/FrontView/04.jpg",
@@ -58,4 +58,14 @@ export const DiningImages = {
   six: "https://i.ibb.co/T8xHJ7C/39.jpg",
   seven: "https://i.ibb.co/VQbRrtS/40.jpg",
   eight: "https://i.ibb.co/DR9dmP5/41.jpg",
+};
+
+// Kitchen Images
+export const KitchenImages = {
+  one: "https://i.ibb.co/rQcXSjd/09.jpg",
+  two: "https://i.ibb.co/JcVyf8t/10.jpg",
+  three: "https://i.ibb.co/C7x53WZ/11.jpg",
+  four: "https://i.ibb.co/MnDBfq4/34.jpg",
+  five: "https://i.ibb.co/hXWVC0m/35.jpg",
+  six: "https://i.ibb.co/v1ScJXH/36.jpg",
 };

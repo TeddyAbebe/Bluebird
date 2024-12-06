@@ -1,6 +1,7 @@
 import {
   DiningImages,
   FrontViewImages,
+  KitchenImages,
   LivingSpaceImages,
   imageConfig,
   localImages,
@@ -52,10 +53,12 @@ export const galleryImages = [
     description: "Modern, fully-equipped kitchen",
     category: "interior",
     images: [
-      FrontViewImages.one,
-      FrontViewImages.two,
-      FrontViewImages.three,
-      FrontViewImages.four,
+      KitchenImages.one,
+      KitchenImages.two,
+      KitchenImages.three,
+      KitchenImages.four,
+      KitchenImages.five,
+      KitchenImages.six,
     ],
   },
   {
