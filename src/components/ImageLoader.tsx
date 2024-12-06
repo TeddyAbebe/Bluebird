@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 interface ImageLoaderProps {
   src: string;
@@ -7,7 +7,12 @@ interface ImageLoaderProps {
   blur?: string;
 }
 
-export function ImageLoader({ src, alt, className = '', blur }: ImageLoaderProps) {
+export function ImageLoader({
+  src,
+  alt,
+  className = "",
+  blur,
+}: ImageLoaderProps) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -25,15 +30,17 @@ export function ImageLoader({ src, alt, className = '', blur }: ImageLoaderProps
           className="absolute inset-0 blur-lg transform scale-110"
           style={{
             backgroundImage: `url(${blur})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundSize: "cover",
+            backgroundPosition: "center",
           }}
         />
       )}
       <img
         src={src}
         alt={alt}
-        className={`${className} ${isLoading ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}
+        className={`${className} ${
+          isLoading ? "opacity-0" : "opacity-100"
+        } transition-opacity duration-300`}
         loading="lazy"
       />
     </div>

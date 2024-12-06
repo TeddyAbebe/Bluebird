@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { generateBlurHash } from '../../utils/imageHelpers';
+import React, { useState } from "react";
 
 interface ImageLoaderProps {
   src: string;
@@ -9,37 +8,42 @@ interface ImageLoaderProps {
   height?: number;
 }
 
-export function ImageLoader({ src, alt, className = '', width = 400, height = 300 }: ImageLoaderProps) {
+export const ImageLoader: React.FC<ImageLoaderProps> = ({
+  src,
+  alt,
+  className = "",
+  width = 400,
+  height = 300,
+}) => {
   const [isLoading, setIsLoading] = useState(true);
-  const [blurDataUrl, setBlurDataUrl] = useState<string>('');
-
-  useEffect(() => {
-    setBlurDataUrl(generateBlurHash(width, height));
-    const img = new Image();
-    img.src = src;
-    img.onload = () => setIsLoading(false);
-  }, [src, width, height]);
 
   return (
-    <div className="relative overflow-hidden">
+    <div
+      className={`relative overflow-hidden ${className}`}
+      style={{ width: `${width}px`, height: `${height}px` }}
+    >
+      {/* Blurred Placeholder */}
       {isLoading && (
         <div
-          className="absolute inset-0 blur-lg transform scale-110"
+          className="absolute inset-0 bg-gray-200 animate-pulse"
           style={{
-            backgroundImage: `url(${blurDataUrl})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            filter: "blur(20px)",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundImage: `url(${src})`,
           }}
-        />
+        ></div>
       )}
+
+      {/* Actual Image */}
       <img
         src={src}
         alt={alt}
-        width={width}
-        height={height}
-        className={`${className} ${isLoading ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}
-        loading="lazy"
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
+          isLoading ? "opacity-0" : "opacity-100"
+        }`}
+        onLoad={() => setIsLoading(false)}
       />
     </div>
   );
-}
+};
