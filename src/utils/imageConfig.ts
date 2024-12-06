@@ -29,7 +29,7 @@ export const localImages = {
   relaxation: "https://i.ibb.co/W2qsvhk/31.jpg",
   garden: "https://i.ibb.co/5htrHRK/27.jpg",
   outdoor: "https://i.ibb.co/XLmHvvw/22.jpg",
-  entertainment: "/src/images/FrontView/04.jpg",
+  entertainment: "https://i.ibb.co/XLmHvvw/22.jpg",
 };
 
 // Front View Images
