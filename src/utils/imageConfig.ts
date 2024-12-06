@@ -34,10 +34,10 @@ export const localImages = {
 
 // Front View Images
 export const FrontViewImages = {
-  one: "/src/images/FrontView/01 green.png",
-  two: "/src/images/FrontView/02 Green.png",
-  three: "/src/images/FrontView/03 Green.png",
-  four: "/src/images/FrontView/04.jpg",
+  one: "https://i.ibb.co/RCGCYG4/01-green.png",
+  two: "https://i.ibb.co/5G1Lqh4/02-Green.png",
+  three: "https://i.ibb.co/RCGCYG4/03-green.png",
+  four: "https://i.ibb.co/RCGCYG4/04.png",
 };
 
 // Living Space Images
