@@ -1,4 +1,5 @@
 import {
+  DiningImages,
   FrontViewImages,
   LivingSpaceImages,
   imageConfig,
@@ -35,10 +36,14 @@ export const galleryImages = [
     description: "Spacious dining room for residents",
     category: "interior",
     images: [
-      FrontViewImages.one,
-      FrontViewImages.two,
-      FrontViewImages.three,
-      FrontViewImages.four,
+      DiningImages.one,
+      DiningImages.two,
+      DiningImages.three,
+      DiningImages.four,
+      DiningImages.five,
+      DiningImages.six,
+      DiningImages.seven,
+      DiningImages.eight,
     ],
   },
   {

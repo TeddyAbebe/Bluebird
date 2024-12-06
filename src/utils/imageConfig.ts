@@ -18,10 +18,10 @@ export const backgroundImages = {
 
 // Local image paths
 export const localImages = {
-  hero: "/src/images/FrontView/01 green.png",
-  about: "/src/images/FrontView/02 Green.png",
-  livingSpace: "/src/images/LivingSpace/06.jpg",
-  dining: "/src/images/FrontView/03 Green.png",
+  hero: "https://i.ibb.co/RCGCYG4/01-green.png",
+  about: "https://i.ibb.co/RCGCYG4/01-green.png",
+  livingSpace: "https://i.ibb.co/wB3Nftx/06.jpg",
+  dining: "https://i.ibb.co/s5HXdWY/12.jpg",
   kitchen: "/src/images/FrontView/04.jpg",
   bedroom: "/src/images/FrontView/04.jpg",
   bathroom: "/src/images/FrontView/04.jpg",
@@ -42,8 +42,20 @@ export const FrontViewImages = {
 
 // Living Space Images
 export const LivingSpaceImages = {
-  one: "/src/images/LivingSpace/06.jpg",
-  two: "/src/images/LivingSpace/07.jpg",
-  three: "/src/images/LivingSpace/08.jpg",
+  one: "https://i.ibb.co/wB3Nftx/06.jpg",
+  two: "https://i.ibb.co/K7yz3s2/07.jpg",
+  three: "https://i.ibb.co/Cv5TL3W/08.jpg",
   // four: "/src/images/LivingSpace/09.jpg",
+};
+
+// Dining Images
+export const DiningImages = {
+  one: "https://i.ibb.co/s5HXdWY/12.jpg",
+  two: "https://i.ibb.co/3MCVRjH/13.jpg",
+  three: "https://i.ibb.co/3Fk6VZQ/14.jpg",
+  four: "https://i.ibb.co/PwtPGg3/37.jpg",
+  five: "https://i.ibb.co/p055wxH/38.jpg",
+  six: "https://i.ibb.co/T8xHJ7C/39.jpg",
+  seven: "https://i.ibb.co/VQbRrtS/40.jpg",
+  eight: "https://i.ibb.co/DR9dmP5/41.jpg",
 };
