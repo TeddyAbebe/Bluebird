@@ -23,12 +23,12 @@ export const localImages = {
   livingSpace: "https://i.ibb.co/wB3Nftx/06.jpg",
   dining: "https://i.ibb.co/s5HXdWY/12.jpg",
   kitchen: "https://i.ibb.co/rQcXSjd/09.jpg",
-  bedroom: "/src/images/FrontView/04.jpg",
-  bathroom: "/src/images/FrontView/04.jpg",
-  commonArea: "/src/images/FrontView/04.jpg",
-  relaxation: "/src/images/FrontView/04.jpg",
-  garden: "/src/images/FrontView/04.jpg",
-  outdoor: "/src/images/FrontView/04.jpg",
+  bedroom: "https://i.ibb.co/py9GfgN/45.jpg",
+  bathroom: "https://i.ibb.co/Cs1BjKZ/17.jpg",
+  commonArea: "https://i.ibb.co/7jGMYhP/43.jpg",
+  relaxation: "https://i.ibb.co/W2qsvhk/31.jpg",
+  garden: "https://i.ibb.co/5htrHRK/27.jpg",
+  outdoor: "https://i.ibb.co/XLmHvvw/22.jpg",
   entertainment: "/src/images/FrontView/04.jpg",
 };
 
@@ -68,4 +68,58 @@ export const KitchenImages = {
   four: "https://i.ibb.co/MnDBfq4/34.jpg",
   five: "https://i.ibb.co/hXWVC0m/35.jpg",
   six: "https://i.ibb.co/v1ScJXH/36.jpg",
+};
+
+// BedRoom Images
+export const BedRoomImages = {
+  one: "https://i.ibb.co/py9GfgN/45.jpg",
+  two: "https://i.ibb.co/PxR7xbp/46.jpg",
+  three: "https://i.ibb.co/jysCjyF/15.jpg",
+  four: "https://i.ibb.co/LrL9mbR/47.jpg",
+  five: "https://i.ibb.co/L919yft/49.jpg",
+  six: "https://i.ibb.co/3TyS02F/51.jpg",
+  seven: "https://i.ibb.co/mHfVTCh/54.jpg",
+};
+
+// BathRoom Images
+export const BathRoomImages = {
+  one: "https://i.ibb.co/Cs1BjKZ/17.jpg",
+  two: "https://i.ibb.co/0cDjq72/18.jpg",
+  three: "https://i.ibb.co/FD8Ndkx/19.jpg",
+  four: "https://i.ibb.co/t84XT5K/55.jpg",
+  five: "https://i.ibb.co/CnYtLMh/56.jpg",
+  six: "https://i.ibb.co/2Y19wGV/57.jpg",
+  seven: "https://i.ibb.co/9NXdKxS/60.jpg",
+};
+
+// CommonAreas Images
+export const CommonAreasImages = {
+  one: "https://i.ibb.co/7jGMYhP/43.jpg",
+  two: "https://i.ibb.co/BBZLRYL/44.jpg",
+  three: "https://i.ibb.co/DKvy0NQ/58.jpg",
+};
+
+// RelaxationSpace Images
+export const RelaxationSpaceImages = {
+  one: "https://i.ibb.co/W2qsvhk/31.jpg",
+  two: "https://i.ibb.co/NtqL0mK/30.jpg",
+  three: "https://i.ibb.co/6YQf2Ch/32.jpg",
+  four: "https://i.ibb.co/xFpQkwS/33.jpg",
+  five: "https://i.ibb.co/7j3t5VT/42.jpg",
+};
+
+// GardenView Images
+export const GardenViewImages = {
+  one: "https://i.ibb.co/5htrHRK/27.jpg",
+  two: "https://i.ibb.co/T2X3g9s/28.jpg",
+  three: "https://i.ibb.co/RC18G6W/29.jpg",
+};
+
+// OutDoor Images
+export const OutDoorImages = {
+  one: "https://i.ibb.co/XLmHvvw/22.jpg",
+  two: "https://i.ibb.co/rysywfs/23.jpg",
+  three: "https://i.ibb.co/YpfR4y7/24.jpg",
+  four: "https://i.ibb.co/HVWGTW5/25.jpg",
+  five: "https://i.ibb.co/PMTfg6J/26.jpg",
 };
