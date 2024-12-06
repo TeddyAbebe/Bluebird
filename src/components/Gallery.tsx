@@ -60,7 +60,7 @@ export function Gallery() {
         >
           <div className="relative rounded-lg w-full max-w-4xl p-10">
             <button
-              className="absolute rounded-md bg-black bg-opacity-50 w-7 h-7 flex items-center justify-center top-4 right-0 text-white"
+              className="absolute rounded-md bg-black bg-opacity-50 w-7 h-7 flex items-center justify-center top-0 right-14 text-white"
               onClick={closeModal}
             >
               <X size={"15px"} />
@@ -89,11 +89,14 @@ export function Gallery() {
               )}
             >
               {currentImages.map((img, idx) => (
-                <div key={idx} className="rounded-md overflow-hidden">
+                <div
+                  key={idx}
+                  className="rounded-md overflow-hidden flex items-center justify-center"
+                >
                   <img
                     src={img}
                     alt={`Gallery Image ${idx + 1}`}
-                    className="rounded-md"
+                    className="rounded-md max-h-[500px] max-w-full object-contain"
                   />
                 </div>
               ))}
