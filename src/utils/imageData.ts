@@ -102,11 +102,7 @@ export const galleryImages = [
     title: "Common Area",
     description: "Shared spaces for socializing",
     category: "interior",
-    images: [
-      CommonAreasImages.one,
-      CommonAreasImages.two,
-      CommonAreasImages.three,
-    ],
+    images: [CommonAreasImages.two, CommonAreasImages.three],
   },
   {
     url: localImages.relaxation,

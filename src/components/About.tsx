@@ -1,11 +1,24 @@
-import Marquee from "react-fast-marquee";
+import { useRef } from "react";
 import { images } from "../utils/images";
 import { FamilyImages } from "../utils/imageData";
+import { ArrowBigLeftDash, ArrowBigRightDash } from "lucide-react";
 
 export function About() {
+  const firstHalfRef = useRef(null);
+  const secondHalfRef = useRef(null);
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const scrollContainer = (ref: any, direction: any) => {
+    if (ref.current) {
+      const scrollAmount = direction === "right" ? 400 : -400;
+      ref.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    }
+  };
+
   const half = Math.ceil(FamilyImages.length / 2);
   const firstHalf = FamilyImages.slice(0, half);
   const secondHalf = FamilyImages.slice(half);
+
   return (
     <section className="py-20 bg-white" id="about">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,62 +61,86 @@ export function About() {
       </div>
 
       <div className="mt-8 flex flex-col gap-20">
-        {/* Marquee for sliding to the right */}
-        <Marquee
-          gradient={true}
-          speed={40}
-          style={{
-            height: "300px",
-            display: "flex",
-            overflow: "hidden",
-            borderRadius: "20px",
-          }}
-          pauseOnHover={true}
-        >
-          {firstHalf.map((img, index) => (
-            <div
-              key={`right-${index}`}
-              className="flex-shrink-0 flex flex-col gap-14 items-center justify-center mx-5"
-            >
-              <div className="w-[400px] flex items-center gap-10 justify-center transition-transform transform hover:scale-110 hover:shadow-xl cursor-pointer rounded-xl">
-                <img
-                  src={img}
-                  alt={`Family ${index + 1}`}
-                  className="object-contain"
-                />
+        {/* Scrollable container for the first half of the images */}
+        <div className="relative">
+          <div
+            className="flex overflow-x-auto overflow-y-hidden gap-10 p-4"
+            ref={firstHalfRef}
+            style={{
+              height: "300px",
+              borderRadius: "20px",
+            }}
+          >
+            {firstHalf.map((img, index) => (
+              <div
+                key={`right-${index}`}
+                className="flex-shrink-0 flex flex-col items-center justify-center"
+              >
+                <div className="w-[400px] flex items-center justify-center transition-transform transform hover:scale-110 hover:shadow-xl cursor-pointer rounded-xl">
+                  <img
+                    src={img}
+                    alt={`Family ${index + 1}`}
+                    className="object-contain"
+                  />
+                </div>
               </div>
-            </div>
-          ))}
-        </Marquee>
+            ))}
+          </div>
 
-        {/* Marquee for sliding to the left */}
-        <Marquee
-          gradient={true}
-          speed={40}
-          direction="right"
-          style={{
-            height: "300px",
-            display: "flex",
-            overflow: "hidden",
-            borderRadius: "20px",
-          }}
-          pauseOnHover={true}
-        >
-          {secondHalf.map((img, index) => (
-            <div
-              key={`left-${index}`}
-              className="flex-shrink-0 flex flex-col gap-14 items-center justify-center mx-5"
-            >
-              <div className="w-[400px] flex items-center gap-10 justify-center rounded-lg transition-transform transform hover:scale-110 hover:shadow-xl cursor-pointer">
-                <img
-                  src={img}
-                  alt={`Family ${index + 1}`}
-                  className="object-contain"
-                />
+          <button
+            className="absolute left-0 sm:left-4 top-1/2 transform -translate-y-1/2 p-3 rounded-full bg-black bg-opacity-50 hover:bg-opacity-25 text-white z-10"
+            onClick={() => scrollContainer(firstHalfRef, "left")}
+          >
+            <ArrowBigLeftDash />
+          </button>
+          <button
+            className="absolute right-0 sm:right-4 top-1/2 transform -translate-y-1/2 p-3 bg-black bg-opacity-50 hover:bg-opacity-25 text-white rounded-full z-10"
+            onClick={() => scrollContainer(firstHalfRef, "right")}
+          >
+            <ArrowBigRightDash />
+          </button>
+        </div>
+
+        {/* Scrollable container for the second half of the images */}
+        <div className="relative">
+          <div
+            className="flex overflow-x-auto overflow-y-hidden gap-10 p-4"
+            ref={secondHalfRef}
+            style={{
+              height: "300px",
+              borderRadius: "20px",
+            }}
+          >
+            {secondHalf.map((img, index) => (
+              <div
+                key={`left-${index}`}
+                className="flex-shrink-0 flex flex-col items-center justify-center"
+              >
+                <div className="w-[400px] flex items-center justify-center rounded-lg transition-transform transform hover:scale-110 hover:shadow-xl cursor-pointer">
+                  <img
+                    src={img}
+                    alt={`Family ${index + 1}`}
+                    className="object-contain"
+                  />
+                </div>
               </div>
-            </div>
-          ))}
-        </Marquee>
+            ))}
+          </div>
+
+          {/* Arrow buttons for scrolling */}
+          <button
+            className="absolute left-0 sm:left-4 top-1/2 transform -translate-y-1/2 p-3 rounded-full bg-black bg-opacity-50 hover:bg-opacity-25 text-white z-10"
+            onClick={() => scrollContainer(secondHalfRef, "left")}
+          >
+            <ArrowBigLeftDash />
+          </button>
+          <button
+            className="absolute right-0 sm:right-4 top-1/2 transform -translate-y-1/2 p-3 bg-black bg-opacity-50 hover:bg-opacity-25 text-white rounded-full z-10"
+            onClick={() => scrollContainer(secondHalfRef, "right")}
+          >
+            <ArrowBigRightDash />
+          </button>
+        </div>
       </div>
     </section>
   );

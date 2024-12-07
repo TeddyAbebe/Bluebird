@@ -25,7 +25,7 @@ export const localImages = {
   kitchen: "https://i.ibb.co/rQcXSjd/09.jpg",
   bedroom: "https://i.ibb.co/py9GfgN/45.jpg",
   bathroom: "https://i.ibb.co/Cs1BjKZ/17.jpg",
-  commonArea: "https://i.ibb.co/7jGMYhP/43.jpg",
+  commonArea: "https://i.ibb.co/BBZLRYL/44.jpg",
   relaxation: "https://i.ibb.co/W2qsvhk/31.jpg",
   garden: "https://i.ibb.co/5htrHRK/27.jpg",
   entertainment: "https://i.ibb.co/XLmHvvw/22.jpg",
@@ -93,7 +93,6 @@ export const BathRoomImages = {
 
 // CommonAreas Images
 export const CommonAreasImages = {
-  one: "https://i.ibb.co/7jGMYhP/43.jpg",
   two: "https://i.ibb.co/BBZLRYL/44.jpg",
   three: "https://i.ibb.co/DKvy0NQ/58.jpg",
 };

@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { galleryImages as defaultGalleryImages } from "../utils/imageData";
+import { galleryImages } from "../utils/imageData";
 import { ArrowBigLeftDash, ArrowBigRightDash, X } from "lucide-react";
 import { GalleryImage } from "./image/GalleryImage";
 import { ImageLoader } from "./image/ImageLoader";
@@ -9,52 +9,6 @@ import { ImageLoader } from "./image/ImageLoader";
 export function Gallery() {
   const [isOpen, setIsOpen] = useState(false);
   const [currentImages, setCurrentImages] = useState<string[]>([]);
-  const [galleryImages, setGalleryImages] = useState(defaultGalleryImages);
-
-  useEffect(() => {
-    const storedImages = localStorage.getItem("galleryImages");
-
-    const fetchGalleryImages = () => {
-      return defaultGalleryImages;
-    };
-
-    const checkForUpdates = () => {
-      // Periodically check for updates every 10 minutes
-      const timeoutId = setTimeout(() => {
-        const newImages = fetchGalleryImages();
-        const storedImages = JSON.parse(
-          localStorage.getItem("galleryImages") || "[]"
-        );
-
-        // Compare the stored images with the fetched ones
-        if (JSON.stringify(storedImages) !== JSON.stringify(newImages)) {
-          // Update localStorage with new images
-          localStorage.setItem("galleryImages", JSON.stringify(newImages));
-          setGalleryImages(newImages);
-        }
-      }, 600000); // 10 minutes
-
-      // Return the timeout ID for clearing
-      return timeoutId;
-    };
-
-    let timeoutId;
-
-    if (storedImages) {
-      // Use stored images if they exist
-      setGalleryImages(JSON.parse(storedImages));
-      timeoutId = checkForUpdates();
-    } else {
-      // Save default images to localStorage
-      const newImages = fetchGalleryImages();
-      localStorage.setItem("galleryImages", JSON.stringify(newImages));
-      setGalleryImages(newImages);
-      timeoutId = checkForUpdates();
-    }
-
-    // Clean up the timeout
-    return () => clearTimeout(timeoutId);
-  }, []);
 
   const openModal = (images: string[]) => {
     setCurrentImages(images);
@@ -107,7 +61,7 @@ export function Gallery() {
         >
           <div className="relative rounded-lg w-full max-w-4xl p-10">
             <button
-              className="absolute rounded-md bg-black bg-opacity-50 w-7 h-7 flex items-center justify-center top-0 right-32 text-white"
+              className="absolute rounded-md bg-black bg-opacity-50 w-7 h-7 flex items-center justify-center top-0 right-10 sm:right-32 text-white"
               onClick={closeModal}
             >
               <X size={"15px"} />
@@ -120,7 +74,7 @@ export function Gallery() {
               autoPlay={true}
               renderArrowPrev={(clickHandler) => (
                 <button
-                  className="absolute left-16 top-1/2 transform -translate-y-1/2 p-3 rounded-full bg-black bg-opacity-50 hover:bg-opacity-25 text-white z-10"
+                  className="absolute left-0 sm:left-16 top-1/2 transform -translate-y-1/2 p-3 rounded-full bg-black bg-opacity-50 hover:bg-opacity-25 text-white z-10"
                   onClick={clickHandler}
                 >
                   <ArrowBigLeftDash />
@@ -128,7 +82,7 @@ export function Gallery() {
               )}
               renderArrowNext={(clickHandler) => (
                 <button
-                  className="absolute right-16 top-1/2 transform -translate-y-1/2 p-3 bg-black bg-opacity-50 hover:bg-opacity-25 text-white rounded-full z-10"
+                  className="absolute right-0 sm:right-16 top-1/2 transform -translate-y-1/2 p-3 bg-black bg-opacity-50 hover:bg-opacity-25 text-white rounded-full z-10"
                   onClick={clickHandler}
                 >
                   <ArrowBigRightDash />
