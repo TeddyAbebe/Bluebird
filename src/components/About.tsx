@@ -1,9 +1,13 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { images } from "../utils/images";
 import { FamilyImages } from "../utils/imageData";
-import { ArrowBigLeftDash, ArrowBigRightDash } from "lucide-react";
+import { ArrowBigLeftDash, ArrowBigRightDash, X } from "lucide-react";
 
 export function About() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const modalRef = useRef(null); // Reference for the modal content
+
   const firstHalfRef = useRef(null);
   const secondHalfRef = useRef(null);
 
@@ -18,6 +22,22 @@ export function About() {
   const half = Math.ceil(FamilyImages.length / 2);
   const firstHalf = FamilyImages.slice(0, half);
   const secondHalf = FamilyImages.slice(half);
+
+  const openModal = (image: string) => {
+    setSelectedImage(image);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedImage(null);
+  };
+
+  const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === e.currentTarget) {
+      closeModal();
+    }
+  };
 
   return (
     <section className="py-20 bg-white" id="about">
@@ -76,7 +96,10 @@ export function About() {
                 key={`right-${index}`}
                 className="flex-shrink-0 flex flex-col items-center justify-center"
               >
-                <div className="w-[400px] flex items-center justify-center transition-transform transform hover:scale-110 hover:shadow-xl cursor-pointer rounded-xl">
+                <div
+                  className="w-[400px] flex items-center justify-center transition-transform transform hover:scale-110 hover:shadow-xl cursor-pointer rounded-xl"
+                  onClick={() => openModal(img)}
+                >
                   <img
                     src={img}
                     alt={`Family ${index + 1}`}
@@ -116,7 +139,10 @@ export function About() {
                 key={`left-${index}`}
                 className="flex-shrink-0 flex flex-col items-center justify-center"
               >
-                <div className="w-[400px] flex items-center justify-center rounded-lg transition-transform transform hover:scale-110 hover:shadow-xl cursor-pointer">
+                <div
+                  className="w-[400px] flex items-center justify-center rounded-lg transition-transform transform hover:scale-110 hover:shadow-xl cursor-pointer"
+                  onClick={() => openModal(img)}
+                >
                   <img
                     src={img}
                     alt={`Family ${index + 1}`}
@@ -142,6 +168,32 @@ export function About() {
           </button>
         </div>
       </div>
+
+      {/* Modal for displaying selected image */}
+      {isModalOpen && (
+        <div
+          className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-20 mt-8"
+          onClick={handleBackdropClick}
+        >
+          <div
+            ref={modalRef}
+            className="relative bg-white shadow-lg"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="absolute rounded-md bg-black bg-opacity-50 w-7 h-7 flex items-center justify-center -top-4 -right-10 text-white"
+              onClick={closeModal}
+            >
+              <X size={"15px"} />
+            </button>
+            <img
+              src={selectedImage!}
+              alt="Selected"
+              className="max-w-full max-h-[80vh] object-contain"
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }
