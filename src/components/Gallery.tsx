@@ -61,7 +61,7 @@ export function Gallery() {
         >
           <div className="relative rounded-lg w-full max-w-4xl p-10">
             <button
-              className="absolute rounded-md bg-black bg-opacity-50 w-7 h-7 flex items-center justify-center top-0 right-10 sm:right-32 text-white"
+              className="absolute rounded-md bg-black bg-opacity-50 w-7 h-7 flex items-center justify-center top-20 sm:top-10 right-10 sm:right-36 text-white border"
               onClick={closeModal}
             >
               <X size={"15px"} />
@@ -74,7 +74,7 @@ export function Gallery() {
               autoPlay={true}
               renderArrowPrev={(clickHandler) => (
                 <button
-                  className="absolute left-0 sm:left-16 top-1/2 transform -translate-y-1/2 p-3 rounded-full bg-black bg-opacity-50 hover:bg-opacity-25 text-white z-10"
+                  className="absolute left-0 sm:left-28 border border-gray-500 top-1/2 transform -translate-y-1/2 p-3 rounded-full bg-black bg-opacity-50 hover:bg-opacity-25 text-white z-10"
                   onClick={clickHandler}
                 >
                   <ArrowBigLeftDash />
@@ -82,7 +82,7 @@ export function Gallery() {
               )}
               renderArrowNext={(clickHandler) => (
                 <button
-                  className="absolute right-0 sm:right-16 top-1/2 transform -translate-y-1/2 p-3 bg-black bg-opacity-50 hover:bg-opacity-25 text-white rounded-full z-10"
+                  className="absolute right-0 sm:right-28 border border-gray-500 top-1/2 transform -translate-y-1/2 p-3 bg-black bg-opacity-50 hover:bg-opacity-25 text-white rounded-full z-10"
                   onClick={clickHandler}
                 >
                   <ArrowBigRightDash />
@@ -92,14 +92,14 @@ export function Gallery() {
               {currentImages.map((img, idx) => (
                 <div
                   key={idx}
-                  className="rounded-md overflow-hidden flex items-center justify-center"
+                  className="rounded-md overflow-hidden flex items-center justify-center mt-20"
                 >
                   <ImageLoader
                     src={img}
                     alt={img}
                     className="rounded-md object-contain"
-                    height={500}
-                    width={500}
+                    height={450}
+                    width={450}
                   />
                 </div>
               ))}

@@ -172,16 +172,16 @@ export function About() {
       {/* Modal for displaying selected image */}
       {isModalOpen && (
         <div
-          className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-20 mt-8"
+          className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-90 z-20 mt-8"
           onClick={handleBackdropClick}
         >
           <div
             ref={modalRef}
-            className="relative bg-white shadow-lg"
+            className="relative px-4 rounded-md shadow-lg"
             onClick={(e) => e.stopPropagation()}
           >
             <button
-              className="absolute rounded-md bg-black bg-opacity-50 w-7 h-7 flex items-center justify-center -top-4 -right-10 text-white"
+              className="absolute rounded-md bg-black bg-opacity-50 w-7 h-7 flex items-center justify-center -top-10 sm:-top-5 right-5 sm:-right-10 text-white border border-gray-300"
               onClick={closeModal}
             >
               <X size={"15px"} />
@@ -189,7 +189,7 @@ export function About() {
             <img
               src={selectedImage!}
               alt="Selected"
-              className="max-w-full max-h-[80vh] object-contain"
+              className="max-w-full max-h-[80vh] object-cover rounded-xl h-[400px] sm:h-full"
             />
           </div>
         </div>
