@@ -6,7 +6,7 @@ import { ArrowBigLeftDash, ArrowBigRightDash, X } from "lucide-react";
 export function About() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const modalRef = useRef(null); // Reference for the modal content
+  const modalRef = useRef(null);
 
   const firstHalfRef = useRef(null);
   const secondHalfRef = useRef(null);
