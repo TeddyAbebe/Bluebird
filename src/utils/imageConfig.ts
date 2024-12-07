@@ -28,7 +28,6 @@ export const localImages = {
   commonArea: "https://i.ibb.co/7jGMYhP/43.jpg",
   relaxation: "https://i.ibb.co/W2qsvhk/31.jpg",
   garden: "https://i.ibb.co/5htrHRK/27.jpg",
-  outdoor: "https://i.ibb.co/XLmHvvw/22.jpg",
   entertainment: "https://i.ibb.co/XLmHvvw/22.jpg",
 };
 
@@ -115,8 +114,8 @@ export const GardenViewImages = {
   three: "https://i.ibb.co/RC18G6W/29.jpg",
 };
 
-// OutDoor Images
-export const OutDoorImages = {
+// Entertainment Images
+export const EntertainmentImages = {
   one: "https://i.ibb.co/XLmHvvw/22.jpg",
   two: "https://i.ibb.co/rysywfs/23.jpg",
   three: "https://i.ibb.co/YpfR4y7/24.jpg",

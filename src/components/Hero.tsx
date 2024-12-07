@@ -1,4 +1,3 @@
-import React from "react";
 import { Heart, Phone } from "lucide-react";
 import { images } from "../utils/images";
 

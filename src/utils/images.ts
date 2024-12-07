@@ -1,8 +1,9 @@
 // Image quality parameters for Unsplash
-const imageParams = "auto=format&fit=crop&w=800&q=60";
+// const imageParams = "auto=format&fit=crop&w=800&q=60";
 
 export const images = {
-  hero: `https://images.unsplash.com/photo-1518780664697-55e3ad937233?${imageParams}`,
+  // hero: `https://images.unsplash.com/photo-1518780664697-55e3ad937233?${imageParams}`,
+  hero: "https://i.ibb.co/FmjrhxL/70.jpg",
   about: "https://i.ibb.co/RCGCYG4/01-green.png",
   gallery: [
     {

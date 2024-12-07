@@ -7,7 +7,7 @@ import {
   GardenViewImages,
   KitchenImages,
   LivingSpaceImages,
-  OutDoorImages,
+  EntertainmentImages,
   RelaxationSpaceImages,
   imageConfig,
   localImages,
@@ -132,29 +132,16 @@ export const galleryImages = [
     ],
   },
   {
-    url: localImages.outdoor,
-    title: "Outdoor Space",
-    description: "Accessible outdoor areas",
-    category: "exterior",
-    images: [
-      OutDoorImages.one,
-      OutDoorImages.two,
-      OutDoorImages.three,
-      OutDoorImages.four,
-      OutDoorImages.five,
-    ],
-  },
-  {
     url: localImages.entertainment,
     title: "Entertainment Area",
     description: "Space for activities and entertainment",
     category: "interior",
     images: [
-      OutDoorImages.one,
-      OutDoorImages.two,
-      OutDoorImages.three,
-      OutDoorImages.four,
-      OutDoorImages.five,
+      EntertainmentImages.one,
+      EntertainmentImages.two,
+      EntertainmentImages.three,
+      EntertainmentImages.four,
+      EntertainmentImages.five,
     ],
   },
 ];
@@ -174,3 +161,19 @@ export const videoContent = {
   thumbnail: localImages.commonArea,
   url: "https://drive.google.com/file/d/10eTBGEzEV4eeAOm2nqIWSLEqHdgfLsle/preview",
 };
+
+export const FamilyImages = [
+  "/src/images/AboutUS/1.jpeg",
+  "/src/images/AboutUS/2.jpeg",
+  "/src/images/AboutUS/3.jpeg",
+  "/src/images/AboutUS/4.jpeg",
+  "/src/images/AboutUS/6.jpeg",
+  "/src/images/AboutUS/7.jpeg",
+  "/src/images/AboutUS/8.jpeg",
+  "/src/images/AboutUS/9.jpeg",
+  "/src/images/AboutUS/10.jpeg",
+  "/src/images/AboutUS/11.jpeg",
+  "/src/images/AboutUS/12.jpeg",
+  "/src/images/AboutUS/13.jpeg",
+  "/src/images/AboutUS/14.jpeg",
+];
