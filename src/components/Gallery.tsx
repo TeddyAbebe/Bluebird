@@ -11,20 +11,49 @@ export function Gallery() {
   const [currentImages, setCurrentImages] = useState<string[]>([]);
   const [galleryImages, setGalleryImages] = useState(defaultGalleryImages);
 
-  // Get gallery images and save them to localStorage
   useEffect(() => {
     const storedImages = localStorage.getItem("galleryImages");
+
+    const fetchGalleryImages = () => {
+      return defaultGalleryImages;
+    };
+
+    const checkForUpdates = () => {
+      // Periodically check for updates every 10 minutes
+      const timeoutId = setTimeout(() => {
+        const newImages = fetchGalleryImages();
+        const storedImages = JSON.parse(
+          localStorage.getItem("galleryImages") || "[]"
+        );
+
+        // Compare the stored images with the fetched ones
+        if (JSON.stringify(storedImages) !== JSON.stringify(newImages)) {
+          // Update localStorage with new images
+          localStorage.setItem("galleryImages", JSON.stringify(newImages));
+          setGalleryImages(newImages);
+        }
+      }, 600000); // 10 minutes
+
+      // Return the timeout ID for clearing
+      return timeoutId;
+    };
+
+    let timeoutId;
 
     if (storedImages) {
       // Use stored images if they exist
       setGalleryImages(JSON.parse(storedImages));
+      timeoutId = checkForUpdates();
     } else {
       // Save default images to localStorage
-      localStorage.setItem(
-        "galleryImages",
-        JSON.stringify(defaultGalleryImages)
-      );
+      const newImages = fetchGalleryImages();
+      localStorage.setItem("galleryImages", JSON.stringify(newImages));
+      setGalleryImages(newImages);
+      timeoutId = checkForUpdates();
     }
+
+    // Clean up the timeout
+    return () => clearTimeout(timeoutId);
   }, []);
 
   const openModal = (images: string[]) => {
