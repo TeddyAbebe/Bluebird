@@ -1,11 +1,12 @@
-import React from 'react';
-import { Bird } from 'lucide-react';
+// import Logo from "../../public/logobluebird.png";
 
 export function Logo() {
   return (
     <div className="flex items-center">
-      <Bird className="h-8 w-8 text-white" />
-      <span className="ml-2 text-xl font-semibold text-white">Bluebird Millcreek</span>
+      <img src="../../public/logobluebird.png" alt="Logo" className="w-8 h-8" />
+      <span className="ml-2 text-xl font-semibold text-white">
+        Bluebird Millcreek
+      </span>
     </div>
   );
 }
