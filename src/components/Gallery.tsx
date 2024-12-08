@@ -59,51 +59,53 @@ export function Gallery() {
           className="fixed inset-0 bg-black bg-opacity-85 flex items-center justify-center z-50"
           onClick={handleBackdropClick}
         >
-          <div className="relative rounded-lg w-full max-w-4xl p-10">
+          <div className="relative rounded-lg w-full max-w-4xl p-10 sm:flex sm:flex-col items-center justify-center">
             <button
-              className="absolute rounded-md bg-black bg-opacity-50 w-7 h-7 flex items-center justify-center top-20 sm:top-10 right-10 sm:right-36 text-white border"
+              className="absolute rounded-md bg-black bg-opacity-50 w-7 h-7 flex items-center justify-center top-20 sm:top-10 right-2 sm:right-20 text-white cursor-pointer"
               onClick={closeModal}
             >
               <X size={"15px"} />
             </button>
 
-            <Carousel
-              showThumbs={false}
-              showStatus={false}
-              infiniteLoop={true}
-              autoPlay={true}
-              renderArrowPrev={(clickHandler) => (
-                <button
-                  className="absolute left-0 sm:left-28 border border-gray-500 top-1/2 transform -translate-y-1/2 p-3 rounded-full bg-black bg-opacity-50 hover:bg-opacity-25 text-white z-10"
-                  onClick={clickHandler}
-                >
-                  <ArrowBigLeftDash />
-                </button>
-              )}
-              renderArrowNext={(clickHandler) => (
-                <button
-                  className="absolute right-0 sm:right-28 border border-gray-500 top-1/2 transform -translate-y-1/2 p-3 bg-black bg-opacity-50 hover:bg-opacity-25 text-white rounded-full z-10"
-                  onClick={clickHandler}
-                >
-                  <ArrowBigRightDash />
-                </button>
-              )}
-            >
-              {currentImages.map((img, idx) => (
-                <div
-                  key={idx}
-                  className="rounded-md overflow-hidden flex items-center justify-center mt-20"
-                >
-                  <ImageLoader
-                    src={img}
-                    alt={img}
-                    className="rounded-md object-contain"
-                    height={450}
-                    width={450}
-                  />
-                </div>
-              ))}
-            </Carousel>
+            <div className="max-w-2xl">
+              <Carousel
+                showThumbs={false}
+                showStatus={false}
+                infiniteLoop={true}
+                autoPlay={true}
+                renderArrowPrev={(clickHandler) => (
+                  <button
+                    className="absolute left-0 border border-gray-500 top-1/2 transform -translate-y-1/2 p-3 rounded-full bg-black bg-opacity-50 hover:bg-opacity-25 text-white z-50 cursor-pointer"
+                    onClick={clickHandler}
+                  >
+                    <ArrowBigLeftDash />
+                  </button>
+                )}
+                renderArrowNext={(clickHandler) => (
+                  <button
+                    className="absolute right-0 border border-gray-500 top-1/2 transform -translate-y-1/2 p-3 bg-black bg-opacity-50 hover:bg-opacity-25 text-white rounded-full z-10"
+                    onClick={clickHandler}
+                  >
+                    <ArrowBigRightDash />
+                  </button>
+                )}
+              >
+                {currentImages.map((img, idx) => (
+                  <div
+                    key={idx}
+                    className="rounded-md overflow-hidden flex items-center justify-center mt-20"
+                  >
+                    <ImageLoader
+                      src={img}
+                      alt={img}
+                      className="rounded-md object-contain"
+                      height={450}
+                      width={450}
+                    />
+                  </div>
+                ))}
+              </Carousel>
+            </div>
           </div>
         </div>
       )}
