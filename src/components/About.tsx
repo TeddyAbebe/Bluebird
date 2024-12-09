@@ -101,7 +101,12 @@ export function About() {
           <div>
             {/* Image Display */}
             <div className="rounded-xl overflow-hidden">
-              <Marquee gradient={true} gradientWidth={20} speed={30}>
+              <Marquee
+                gradient={true}
+                gradientWidth={20}
+                speed={30}
+                pauseOnHover={true}
+              >
                 {carouselImages.map((img, index) => (
                   <div
                     key={index}

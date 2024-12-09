@@ -10,7 +10,7 @@ export function Hero() {
           backgroundImage: `url("${images.hero}")`,
         }}
       >
-        <div className="absolute inset-0 bg-primary-900 bg-opacity-50">
+        <div className="absolute inset-0 bg-slate-900 bg-opacity-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
             <div className="text-white max-w-2xl">
               <h1 className="font-display text-5xl md:text-7xl font-bold mb-6 leading-tight">
