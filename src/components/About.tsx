@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useRef, useState } from "react";
 import { FamilyImages } from "../utils/imageData";
 import { ArrowBigLeftDash, ArrowBigRightDash, X } from "lucide-react";
