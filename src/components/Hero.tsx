@@ -22,12 +22,13 @@ export function Hero() {
               </p>
               <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4">
                 <a
-                  href="tel:4252256227"
+                  href="tel:+12063132874"
                   className="w-full sm:w-auto group bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-lg flex items-center justify-center font-semibold transition-colors duration-200"
                 >
                   <Phone className="mr-2 h-5 w-5 group-hover:animate-bounce" />
-                  Call (425) 225-6227
+                  Call +1 (206) 313-2874
                 </a>
+
                 <a
                   href="#contact"
                   className="w-full sm:w-auto group border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-primary-600 flex items-center justify-center font-semibold transition-all duration-200"

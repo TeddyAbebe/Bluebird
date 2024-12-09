@@ -62,7 +62,7 @@ export default function App() {
               </div>
               <div>
                 <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
-                <p className="text-gray-400">Phone: (425) 225-6227</p>
+                <p className="text-gray-400">Phone: +1 (206) 313-2874</p>
                 <p className="text-gray-400">Location: Mill Creek, WA</p>
               </div>
             </div>

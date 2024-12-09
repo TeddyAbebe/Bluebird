@@ -31,7 +31,7 @@ export function Navbar() {
 
           <div className="hidden md:flex items-center">
             <Phone className="h-5 w-5 text-white mr-2" />
-            <span className="text-white">(425) 225-6227</span>
+            <span className="text-white">+1 (206) 313-2874</span>
           </div>
 
           <button

@@ -24,10 +24,10 @@ export function Contact() {
               <div className="flex items-center">
                 <Phone className="h-5 w-5 text-primary-600 mr-3" />
                 <a
-                  href="tel:4252256227"
+                  href="tel:+12063132874"
                   className="text-gray-600 hover:text-primary-600"
                 >
-                  (425) 225-6227
+                  +1 (206) 313-2874
                 </a>
               </div>
               <div className="flex items-center">
