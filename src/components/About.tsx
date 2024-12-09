@@ -31,11 +31,13 @@ export function About() {
   const openModal = (image: string) => {
     setSelectedImage(image);
     setIsModalOpen(true);
+    document.body.classList.add("overflow-hidden");
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
     setSelectedImage(null);
+    document.body.classList.remove("overflow-hidden");
   };
 
   const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
