@@ -1,18 +1,22 @@
-import { useRef, useState } from "react";
-import { images } from "../utils/images";
+import { useEffect, useRef, useState } from "react";
 import { FamilyImages } from "../utils/imageData";
 import { ArrowBigLeftDash, ArrowBigRightDash, X } from "lucide-react";
+import Marquee from "react-fast-marquee";
 
 export function About() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [carouselImages, setCarouselImages] = useState<string[]>([]);
   const modalRef = useRef(null);
+  // const carouselRef = useRef(null);
 
   const firstHalfRef = useRef(null);
   const secondHalfRef = useRef(null);
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const scrollContainer = (ref: any, direction: any) => {
+  const scrollContainer = (
+    ref: React.RefObject<HTMLDivElement>,
+    direction: "left" | "right"
+  ) => {
     if (ref.current) {
       const scrollAmount = direction === "right" ? 400 : -400;
       ref.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
@@ -38,6 +42,29 @@ export function About() {
       closeModal();
     }
   };
+
+  const getRandomImages = (images: string[], count: number) => {
+    const shuffled = [...images].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count);
+  };
+
+  useEffect(() => {
+    const randomImages = [
+      ...getRandomImages(firstHalf, 2),
+      ...getRandomImages(secondHalf, 2),
+    ];
+    setCarouselImages(randomImages);
+  }, []);
+
+  // const scrollCarousel = (direction: "left" | "right") => {
+  //   if (carouselRef.current) {
+  //     const scrollAmount = direction === "right" ? 400 : -400;
+  //     (carouselRef.current as HTMLDivElement).scrollBy({
+  //       left: scrollAmount,
+  //       behavior: "smooth",
+  //     });
+  //   }
+  // };
 
   return (
     <section className="py-20 bg-white" id="about">
@@ -71,11 +98,24 @@ export function About() {
           </div>
 
           <div>
-            <img
-              src={images.about}
-              alt="Bluebird Millcreek Adult Family Home"
-              className="rounded-lg shadow-lg w-full h-[500px] object-cover"
-            />
+            {/* Image Display */}
+            <div className="rounded-xl overflow-hidden">
+              <Marquee gradient={true} gradientWidth={20} speed={30}>
+                {carouselImages.map((img, index) => (
+                  <div
+                    key={index}
+                    className="flex-shrink-0 w-full h-[300px] overflow-hidden rounded-xl cursor-pointer transition-transform transform hover:scale-10"
+                    onClick={() => openModal(img)}
+                  >
+                    <img
+                      src={img}
+                      alt={`Carousel ${index}`}
+                      className="w-full h-full object-cover mx-5 rounded-xl"
+                    />
+                  </div>
+                ))}
+              </Marquee>
+            </div>
           </div>
         </div>
       </div>
@@ -189,7 +229,7 @@ export function About() {
             <img
               src={selectedImage!}
               alt="Selected"
-              className="max-w-full max-h-[80vh] object-cover rounded-xl h-[400px] sm:h-full"
+              className="max-w-full max-h-[80vh] object-contain rounded-xl h-[400px] sm:h-full"
             />
           </div>
         </div>

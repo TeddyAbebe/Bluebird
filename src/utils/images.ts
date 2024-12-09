@@ -3,7 +3,7 @@
 
 export const images = {
   // hero: `https://images.unsplash.com/photo-1518780664697-55e3ad937233?${imageParams}`,
-  hero: "https://i.ibb.co/FmjrhxL/70.jpg",
+  hero: "https://i.ibb.co/LNCzgfp/Banner.jpg",
   about: "https://i.ibb.co/RCGCYG4/01-green.png",
   gallery: [
     {

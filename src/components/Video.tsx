@@ -13,7 +13,7 @@ export function Video() {
 
         <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-xl">
           <iframe
-            src="https://www.youtube.com/embed/IKAeflxZZz0"
+            src="https://www.youtube.com/embed/h8LoKDIrYBE"
             allow="autoplay; fullscreen"
             allowFullScreen
             className="w-full h-[600px]"
