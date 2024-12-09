@@ -14,7 +14,7 @@ export function Hero() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
             <div className="text-white max-w-2xl">
               <h1 className="font-display text-5xl md:text-7xl font-bold mb-6 leading-tight">
-                Welcome to Bluebird Millcreek
+                Welcome to BlueBird Millcreek
               </h1>
               <p className="font-sans text-xl md:text-2xl mb-8 leading-relaxed">
                 Providing compassionate care and a warm, nurturing environment

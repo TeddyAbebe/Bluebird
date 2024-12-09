@@ -32,7 +32,7 @@ export function Contact() {
               </div>
               <div className="flex items-center">
                 <Mail className="h-5 w-5 text-primary-600 mr-3" />
-                <span className="text-gray-600">Bluebirdmcafh@gmail.com</span>
+                <span className="text-gray-600">BlueBirdmcafh@gmail.com</span>
               </div>
               <div className="flex items-center">
                 <MapPin className="h-5 w-5 text-primary-600 mr-3" />

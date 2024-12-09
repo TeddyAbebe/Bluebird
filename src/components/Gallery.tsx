@@ -48,7 +48,7 @@ export function Gallery() {
               className="cursor-pointer"
               url={image.url}
               title={image.title}
-              description={image.description}
+              // description={image.description}
             />
           ))}
         </div>

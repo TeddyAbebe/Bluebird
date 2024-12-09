@@ -23,7 +23,7 @@ export default function App() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div>
                 <h3 className="text-lg font-semibold mb-4">
-                  Bluebird Millcreek
+                  BlueBird Millcreek
                 </h3>
                 <p className="text-gray-400">
                   Providing exceptional care and comfort in Mill Creek, WA
@@ -68,7 +68,7 @@ export default function App() {
             </div>
             <div className="border-t border-gray-700 mt-8 pt-8 text-center">
               <p>
-                &copy; {new Date().getFullYear()} Bluebird Millcreek Adult
+                &copy; {new Date().getFullYear()} BlueBird Millcreek Adult
                 Family Home. All rights reserved.
               </p>
             </div>

@@ -75,12 +75,12 @@ export function About() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="font-display text-4xl font-bold text-gray-900 mb-6">
-              About Bluebird Millcreek
+              About BlueBird Millcreek
             </h2>
 
             <div className="space-y-4 text-gray-600 leading-relaxed">
               <p className="text-lg">
-                At Bluebird Millcreek Adult Family Home, we believe in providing
+                At BlueBird Millcreek Adult Family Home, we believe in providing
                 exceptional care in a warm, home-like environment. Our adult
                 family home offers personalized attention and support while
                 maintaining the dignity and independence of our residents.
