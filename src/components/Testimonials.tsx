@@ -142,7 +142,7 @@ const TestimonialSection: React.FC = () => {
           className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
           onClick={handleBackdropClick}
         >
-          <div className="bg-white p-8 rounded-lg max-w-3xl w-full relative">
+          <div className="bg-white p-4 sm:p-6 md:p-8 rounded-lg max-w-full sm:max-w-md md:max-w-3xl w-full relative max-h-[80vh] overflow-y-auto">
             <button
               className="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
               onClick={() => setSelectedTestimonial(null)}
@@ -153,7 +153,7 @@ const TestimonialSection: React.FC = () => {
               <img
                 src={selectedTestimonial.image}
                 alt={selectedTestimonial.name}
-                className="w-16 h-16 rounded-full object-cover mr-4"
+                className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover mr-4"
               />
               <div>
                 <h3 className="text-xl font-medium text-gray-900">
@@ -162,7 +162,13 @@ const TestimonialSection: React.FC = () => {
                 <p className="text-gray-600">{selectedTestimonial.role}</p>
               </div>
             </div>
-            <p className="text-gray-700">{selectedTestimonial.message}</p>
+
+            {/* Scrollable content */}
+            <div className="overflow-y-auto max-h-[60vh]">
+              <p className="text-gray-700 text-sm sm:text-base">
+                {selectedTestimonial.message}
+              </p>
+            </div>
           </div>
         </div>
       )}
